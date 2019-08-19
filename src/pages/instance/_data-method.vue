@@ -1,3 +1,5 @@
 <template>
-   <div>hello data and method</div> 
+   <div>
+      <p>数据与方法</p>
+   </div> 
 </template>
