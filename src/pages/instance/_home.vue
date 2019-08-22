@@ -11,5 +11,8 @@ export default {
 </script>
 
 <style>
-
+h1{
+    text-align: center;
+    line-height: 350px;
+}
 </style>
