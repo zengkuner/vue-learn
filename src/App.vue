@@ -21,15 +21,51 @@
             <template slot="title"><i class="el-icon-menu"></i>模板语法</template>
             <el-menu-item-group>
               <el-menu-item index="3-1" :class="{on: '/interpolations'===$route.path}" @click="goTo('/interpolations')">插值</el-menu-item>
-              <el-menu-item index="3-2" :click="{on: '/directives'===$route.path}" @click="goTo('/directives')">指令</el-menu-item>
-              <el-menu-item id="3-3" :class="{on: '/short-hands'===$route.path}" @click="goTo('/short-hands')">缩写</el-menu-item>
+              <el-menu-item index="3-2" :class="{on: '/directives'===$route.path}" @click="goTo('/directives')">指令</el-menu-item>
+              <el-menu-item index="3-3" :class="{on: '/short-hands'===$route.path}" @click="goTo('/short-hands')">缩写</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
           <el-submenu index="4">
             <template slot="title"><i class="el-icon-menu"></i>计算属性和侦听器</template>
             <el-menu-item-group>
               <el-menu-item index="4-1" :class="{on: '/example'===$route.path}" @click="goTo('/example')">计算属性</el-menu-item>
-              <el-menu-item index="4-2">侦听器</el-menu-item>
+              <el-menu-item index="4-2" :class="{on: '/watcher'===$route.path}" @click="goTo('/watcher')">侦听器</el-menu-item>
+            </el-menu-item-group>
+          </el-submenu>
+          <el-submenu index="5">
+            <template slot="title"><i class="el-icon-menu"></i>Class与Style绑定</template>
+            <el-menu-item-group>
+              <el-menu-item index="5-1" :class="{on: '/html-classes'===$route.path}" @click="goTo('/html-classes')">绑定HTML Class</el-menu-item>
+              <el-menu-item index="5-2" :class="{on: '/inline-styles'===$route.path}" @click="goTo('/inline-styles')">绑定内联样式</el-menu-item>
+            </el-menu-item-group>
+          </el-submenu>
+          <el-submenu index="6">
+            <template slot="title"><i class="el-icon-menu"></i>条件渲染</template>
+            <el-menu-item-group>
+              <el-menu-item index="6-1" :class="{on: '/v-if'===$route.path}" @click="goTo('/v-if')">v-if</el-menu-item>
+              <el-menu-item index="6-2" :class="{on: '/v-show'===$route.path}" @click="goTo('/v-show')">v-show</el-menu-item>
+            </el-menu-item-group>
+          </el-submenu>
+          <el-submenu index="7">
+            <template slot="title"><i class="el-icon-menu"></i>列表渲染</template>
+            <el-menu-item-group>
+              <el-menu-item index="7-1" :class="{on: '/v-for'===$route.path}" @click="goTo('/v-for')">v-for</el-menu-item>
+              <el-menu-item index="7-2" :class="{on: '/list-sort'===$route.path}" @click="goTo('/list-sort')">列表搜索和排序</el-menu-item>
+            </el-menu-item-group>
+          </el-submenu>
+          <el-submenu index="8">
+            <template slot="title"><i class="el-icon-menu"></i>事件处理</template>
+            <el-menu-item-group>
+              <el-menu-item index="8-1" :class="{on: '/listen-events'===$route.path}" @click="goTo('/listen-events')">绑定事件监听</el-menu-item>
+              <el-menu-item index="8-2" :class="{on: '/event-modifiers'===$route.path}" @click="goTo('/event-modifiers')">事件修饰符</el-menu-item>
+              <el-menu-item index="8-3"><router-link to="/key-modifiers" tag="li" active-class="active">按键修饰符</router-link></el-menu-item>
+            </el-menu-item-group>
+          </el-submenu>
+          <el-submenu index="9">
+            <template slot="title"><i class="el-icon-menu"></i>表单输入绑定</template>
+            <el-menu-item-group>
+              <el-menu-item index="9-1" :class="{on: '/basic-usage'===$route.path}" @click="goTo('/basic-usage')">基础用法</el-menu-item>
+              <el-menu-item index="9-2"><router-link to="/modifiers" tag="li" active-class="active">修饰符</router-link></el-menu-item>
             </el-menu-item-group>
           </el-submenu>
         </el-menu>
@@ -41,16 +77,18 @@
 </template>
 
 <script>
+/*
 import Instance from './pages/instance'
 import Computed from './pages/computed'
-import TemplateSyntax from './pages/template-syntax'
+import TemplateSyntax from './pages/template-syntax'*/
 
 export default {
+  /*
   components: {
     Instance,
     Computed,
     TemplateSyntax 
-  },
+  },*/
   methods:{
     goTo(path){
       //this.$router和router使用起来完全一样
