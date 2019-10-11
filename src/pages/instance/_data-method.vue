@@ -1,5 +1,5 @@
 <template>
-   <div>
+   <div id="data-method">
       <h3>数据与方法</h3><hr>
       <p>当一个Vue实例被创建时，它将data对象中的所有的属性加入到Vue的响应式系统中。
          当这些属性值发生改变时，视图将会产生“响应”，即匹配更新为新的值。</p>
@@ -34,9 +34,12 @@ var obj = {
    foo: 'bar'
 }
 //Object.freeze(obj)
-export default{
+export default {
    data(){
       return obj
+   },
+   methods: {
+
    }
 }
 </script>

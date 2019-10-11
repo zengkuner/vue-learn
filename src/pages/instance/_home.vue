@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container" id="home">
         <h1>vue学习笔记</h1>
     </div>
 </template>

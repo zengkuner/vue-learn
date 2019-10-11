@@ -1,8 +1,11 @@
 <template>
     <div>
+        <!--<home></home>-->
+        <br>
         <create></create>
+        <br>
         <data-method></data-method>
-        <home></home>
+        <br>
         <hooks/>
     </div>
 </template>

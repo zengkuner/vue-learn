@@ -1,10 +1,10 @@
 /*路由器对象模块*/
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Create from '../src/pages/instance/_create.vue'
-import DataMethod from '../src/pages/instance/_data-method.vue'
+//import Create from '../src/pages/instance/_create.vue'
+//import DataMethod from '../src/pages/instance/_data-method.vue'
 import Home from '../src/pages/instance/_home.vue'
-import Hooks from '../src/pages/instance/_hooks.vue'
+//import Hooks from '../src/pages/instance/_hooks.vue'
 import Interpolations from '../src/pages/template-syntax/_interpolations.vue'
 import ShortHands from '../src/pages/template-syntax/_short-hands.vue'
 import Directives from '../src/pages/template-syntax/_directives.vue'
@@ -21,18 +21,29 @@ import EventModifiers from '../src/pages/event-handling/_event-modifiers.vue'
 import KeyModifiers from '../src/pages/event-handling/_key-modifiers.vue'
 import BasicUsage from '../src/pages/form-input-bindings/_basic-usage.vue'
 import Modifiers from '../src/pages/form-input-bindings/_modifiers.vue'
+import Transition from '../src/pages/transition-animation/_transition.vue'
+import Animation from '../src/pages/transition-animation/_animation.vue'
+import Conditional from '../src/pages/conditional-rendering'
+import ParentComponent from '../src/pages/custom-events/parent-component.vue'
+import ParentNode from '../src/pages/custom-events/parent-node.vue'
+import Instance from '../src/pages/instance'
 
 //声名使用插件
 Vue.use(VueRouter)
 
 export default new VueRouter({
+    mode: 'history',
     //所有路由
     routes: [
+        {
+            path: '/instance',
+            component: Instance
+        },
         {
             path: '/home',
             component: Home
         },
-        {
+        /*{
             path: '/create',
             component: Create
         },
@@ -43,7 +54,7 @@ export default new VueRouter({
         {
             path: '/hooks',
             component: Hooks
-        },
+        },*/
         {
             path: '/interpolations',
             component: Interpolations
@@ -73,12 +84,20 @@ export default new VueRouter({
             component: InlineStyles
         },
         {
-            path: '/v-if',
-            component: VIf
-        },
-        {
-            path: '/v-show',
-            component: VShow
+            path: '/conditional',
+            component: Conditional,
+            children: [
+                {
+                    path: 'v-if',
+                    name: 'if',
+                    component: VIf
+                },
+                {
+                    path: 'v-show',
+                    name: 'show',
+                    component: VShow
+                }
+            ]
         },
         {
             path: '/v-for',
@@ -107,6 +126,22 @@ export default new VueRouter({
         {
             path: '/modifiers',
             component: Modifiers
+        },
+        {
+            path: '/transition',
+            component: Transition
+        },
+        {
+            path: '/animation',
+            component: Animation
+        },
+        {
+            path: '/parent-component',
+            component: ParentComponent
+        },
+        {
+            path: '/parent-node',
+            component: ParentNode
         },
         /*自动跳转路由*/ 
         {
